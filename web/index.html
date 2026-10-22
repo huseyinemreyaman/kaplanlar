@@ -2,255 +2,167 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#071b46">
-
-  <title>BKM Tigers 💙🐯</title>
-
-  <meta
-    name="description"
-    content="BKM Tigers dünyasına hoş geldin! Takımımızı keşfet, galerimize göz at ve bize mesaj gönder."
-  >
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BKM Kaplanlar | Gücünü Göster</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-  <!-- YÜKLEME EKRANI -->
-  <div id="loader" class="loader">
-    <div class="loader-content">
-      <div class="loader-paw" aria-hidden="true">🐾</div>
+    <div class="background-glow"></div>
+    <canvas id="particles"></canvas>
 
-      <h1>BKM <span>TIGERS</span></h1>
-      <p class="loader-message">Kaplanlar hazırlanıyor...</p>
+    <header class="navbar">
+        <a href="#anasayfa" class="logo">
+            <span class="logo-icon">🐯</span>
+            <span>BKM <b>KAPLANLAR</b></span>
+        </a>
 
-      <div
-        class="loader-track"
-        role="progressbar"
-        aria-label="Sayfa yükleniyor"
-        aria-valuemin="0"
-        aria-valuemax="100"
-        aria-valuenow="0"
-        id="loaderTrack"
-      >
-        <div class="loader-progress" id="loaderProgress"></div>
-      </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menüyü aç"
+            aria-expanded="false">☰</button>
 
-      <p class="loader-percent" id="loaderPercent">0%</p>
-      <div class="loader-stars" aria-hidden="true">✦　✧　✦　✧　✦</div>
-    </div>
-  </div>
+        <nav id="navMenu">
+            <a href="#anasayfa">Ana Sayfa</a>
+            <a href="#hakkimizda">Hakkımızda</a>
+            <a href="#ozellikler">Özellikler</a>
+            <a href="#iletisim" class="nav-button">Bize Katıl ↗</a>
+        </nav>
+    </header>
 
-  <!-- ARKA PLAN PARÇACIKLARI -->
-  <div
-    class="background-particles"
-    id="particles"
-    aria-hidden="true"
-  ></div>
+    <main>
+        <section class="hero" id="anasayfa">
+            <div class="hero-content reveal">
+                <div class="status">
+                    <span class="status-dot"></span>
+                    MAVİ ENERJİ AKTİF
+                </div>
 
-  <!-- NAVİGASYON -->
-  <nav class="navbar" aria-label="Ana navigasyon">
-    <a href="#home" class="logo">🐯 BKM <span>TIGERS</span></a>
+                <h1>
+                    BKM<br>
+                    <span class="gradient-text">KAPLANLAR</span>
+                </h1>
 
-    <div class="nav-links">
-      <a href="#home">Ana Sayfa</a>
-      <a href="#about">Hakkımızda</a>
-      <a href="#gallery">Galeri</a>
-      <a href="#contact">İletişim</a>
-    </div>
+                <p class="hero-description">
+                    Gücünü göster. Sınırları aş. İz bırak.
+                    Mavi enerjinin ve kaplan ruhunun dünyasına hoş geldin!
+                </p>
 
-    <button
-      class="menu-btn"
-      id="menuBtn"
-      type="button"
-      aria-label="Menüyü aç"
-      aria-expanded="false"
-      aria-controls="site-navigation"
-    >☰</button>
-  </nav>
+                <div class="hero-buttons">
+                    <a href="#hakkimizda" class="primary-button">
+                        Dünyayı Keşfet <span>→</span>
+                    </a>
+                    <a href="#ozellikler" class="secondary-button">
+                        Daha Fazlası
+                    </a>
+                </div>
 
-  <main>
-    <!-- ANA SAYFA -->
-    <section class="hero" id="home">
-      <div class="floating star star1" aria-hidden="true">✦</div>
-      <div class="floating star star2" aria-hidden="true">✧</div>
-      <div class="floating heart" aria-hidden="true">💙</div>
+                <div class="hero-stats">
+                    <div>
+                        <strong>01</strong>
+                        <span>GÜÇ</span>
+                    </div>
+                    <div>
+                        <strong>∞</strong>
+                        <span>ENERJİ</span>
+                    </div>
+                    <div>
+                        <strong>100%</strong>
+                        <span>KAPLAN RUHU</span>
+                    </div>
+                </div>
+            </div>
 
-      <div class="hero-text">
-        <p class="tag">💙 BİR TAKIMDAN DAHA FAZLASI</p>
+            <div class="hero-visual reveal">
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
 
-        <h1>
-          WE ARE<br>
-          <span>BKM TIGERS!</span>
-        </h1>
+                <div class="tiger-circle">
+                    <div class="tiger-glow"></div>
+                    <img src="logo.png" alt=""selam>
+                </div>
 
-        <p class="description">
-          Gücümüz birlikteliğimizden, enerjimiz dostluğumuzdan!
-          BKM Tigers dünyasına hoş geldin.
-        </p>
+                <div class="floating-card card-top">
+                    <span>⚡</span>
+                    <div>
+                        <strong>Güçlü Ol</strong>
+                        <small>Her zaman ileri</small>
+                    </div>
+                </div>
 
-        <div class="hero-buttons">
-          <a href="#about" class="btn primary">Bizi Keşfet ✨</a>
-          <a href="#contact" class="btn secondary">Bize Yaz 💌</a>
+                <div class="floating-card card-bottom">
+                    <span>💎</span>
+                    <div>
+                        <strong>Mavi Güç</strong>
+                        <small>Farkını ortaya koy</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="marquee">
+            <div class="marquee-track">
+                <span>✦ BKM KAPLANLAR</span>
+                <span>✦ GÜÇLÜ OL</span>
+                <span>✦ FARKINI GÖSTER</span>
+                <span>✦ MAVİ ENERJİ</span>
+                <span>✦ BKM KAPLANLAR</span>
+                <span>✦ GÜÇLÜ OL</span>
+                <span>✦ FARKINI GÖSTER</span>
+                <span>✦ MAVİ ENERJİ</span>
+            </div>
         </div>
-      </div>
 
-      <div class="mascot">
-        <div class="mascot-circle">
-          <img
-            src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=700&q=85"
-            alt="Kaplan fotoğrafı"
-            fetchpriority="high"
-          >
-        </div>
+        <section class="about section" id="hakkimizda">
+            <div class="section-heading reveal">
+                <span class="eyebrow">BİZ KİMİZ?</span>
+                <h2>Bir Tasarımdan <span class="gradient-text">Daha Fazlası.</span></h2>
+                <p>Güçlü görünüm, modern çizgiler ve etkileyici bir deneyim.</p>
+            </div>
 
-        <span class="bubble">ROARR! 🐯</span>
-      </div>
+            <div class="feature-grid" id="ozellikler">
+                <article class="feature-card reveal">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Dinamik Enerji</h3>
+                    <p>Akıcı geçişler, hareketli ışıklar ve canlı efektlerle fark yarat.</p>
+                    <span class="card-number">01 / ENERGY</span>
+                </article>
 
-      <div class="scroll-hint" aria-hidden="true">↓ AŞAĞI İN ↓</div>
-    </section>
+                <article class="feature-card reveal">
+                    <div class="feature-icon">🐯</div>
+                    <h3>Kaplan Ruhu</h3>
+                    <p>Gücün, cesaretin ve özgünlüğün birleştiği özel bir dünya.</p>
+                    <span class="card-number">02 / POWER</span>
+                </article>
 
-    <!-- HAKKIMIZDA -->
-    <section class="about section" id="about">
-      <p class="tag">TANIŞALIM ✨</p>
+                <article class="feature-card reveal">
+                    <div class="feature-icon">💎</div>
+                    <h3>Mavi Tasarım</h3>
+                    <p>Neon mavi ışıklar ve koyu arka planla modern bir görünüm.</p>
+                    <span class="card-number">03 / STYLE</span>
+                </article>
+            </div>
+        </section>
 
-      <h2>Biz <span>BKM Tigers'ız!</span></h2>
+        <section class="cta-section section reveal" id="iletisim">
+            <span class="eyebrow">SIRA SENDE</span>
+            <h2>Kaplan Gibi <span class="gradient-text">Parla!</span></h2>
+            <p>Hayalindeki tasarımı keşfetmeye hazır mısın?</p>
+            <a href="#anasayfa" class="primary-button">Yukarı Dön ↑</a>
+        </section>
+    </main>
+    <center>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12282.54203313132!2d27.929106!3d39.680413!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b655616676fb73%3A0x5b1f75c5202bd533!2zUGHFn2EgQWxhbsSxLCBUYXJpaMOnaSBDZW1hbCBLdXRheSBDZC4gTm86MTIsIDEwMDIwIEthcmVzaS9CYWzEsWtlc2ly!5e0!3m2!1sen!2str!4v1679908796798!5m2!1sen!2str" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </center>
+    <footer>
+        <a href="#anasayfa" class="footer-logo">🐯 BKM KAPLANLAR</a>
+        <p>© <span id="year"></span> BKM Kaplanlar. Tüm hakları saklıdır.</p>
+        <a href="#anasayfa" class="back-top">↑</a>
+        <a href="contact.html">Contact Us</a>
+    </footer>
 
-      <p class="section-text">
-        Birlikte eğlenen, birlikte öğrenen ve her zaman birbirini
-        destekleyen kocaman bir aileyiz. Her gün yeni bir macera!
-      </p>
 
-      <div class="cards">
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">🤝</div>
-          <h3>Takım Ruhu</h3>
-          <p>Birlikte daha güçlüyüz. Her zaman yan yanayız!</p>
-        </article>
-
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">⚡</div>
-          <h3>Enerji</h3>
-          <p>Bitmeyen heyecan, bolca eğlence ve güzel anılar!</p>
-        </article>
-
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">💙</div>
-          <h3>Dostluk</h3>
-          <p>BKM Tigers demek, kocaman bir aile demek!</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- GALERİ -->
-    <section class="gallery section" id="gallery">
-      <p class="tag">GÜZEL ANILAR 📸</p>
-
-      <h2>Tigers <span>Galerisi</span></h2>
-
-      <p class="section-text">
-        Birbirinden güzel fotoğraflar ve unutulmaz anlar!
-      </p>
-
-      <div class="gallery-grid">
-        <img
-          src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=700&q=80"
-          alt="Renkli yaratıcılık"
-          loading="lazy"
-        >
-
-        <img
-          src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=700&q=80"
-          alt="Arkadaşlarla güzel anlar"
-          loading="lazy"
-        >
-
-        <img
-          src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=700&q=80"
-          alt="Takım çalışması"
-          loading="lazy"
-        >
-      </div>
-
-      <p class="gallery-note">
-        📌 Bunlar örnek görsellerdir. Kendi takım fotoğraflarını ekleyebilirsin.
-      </p>
-    </section>
-
-    <!-- İLETİŞİM -->
-    <section class="contact section" id="contact">
-      <p class="tag">BİZE ULAŞ 💌</p>
-
-      <h2>Bir mesaj <span>bırak!</span></h2>
-
-      <p class="section-text">
-        BKM Tigers'a söylemek istediğin bir şey mi var?
-        Mesajını bize yaz!
-      </p>
-
-      <form id="contactForm" class="contact-form">
-        <label for="name">Adın</label>
-        <input
-          id="name"
-          name="name"
-          type="text"
-          placeholder="Adını yaz..."
-          autocomplete="name"
-          required
-        >
-
-        <label for="email">E-posta adresin</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          placeholder="ornek@email.com"
-          autocomplete="email"
-          required
-        >
-
-        <label for="message">Mesajın</label>
-        <textarea
-          id="message"
-          name="message"
-          rows="5"
-          placeholder="Bize bir şeyler yaz 💙"
-          required
-        ></textarea>
-
-        <button type="submit" class="btn primary submit-btn">
-          Mesajı Gönder 💌
-        </button>
-
-        <p id="formStatus" role="status" aria-live="polite"></p>
-      </form>
-    </section>
-  </main>
-
-  <!-- ALT BİLGİ -->
-  <footer>
-    <a href="#home" class="logo">🐯 BKM <span>TIGERS</span></a>
-
-    <p>Sevgiyle, dostlukla ve maviyle! 💙</p>
-
-    <p class="copyright">
-      © <span id="year"></span> BKM Tigers
-    </p>
-  </footer>
-
-  <!-- YUKARI ÇIK -->
-  <button
-    id="topBtn"
-    type="button"
-    aria-label="Yukarı çık"
-  >↑</button>
-
+    <script src="script.js"></script>
 </body>
 </html>
