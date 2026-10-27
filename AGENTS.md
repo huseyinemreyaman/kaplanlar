@@ -1,104 +1,33 @@
-# AGENTS.md - BKM Tigers Website Development
+# BKM Kaplanlar Website Development
 
-## Project Overview
+## Project overview
 
-**BKM Tigers** is a student organization's official website built as a modern single-page application. The project uses Go for backend API serving and vanilla JavaScript/CSS for frontend rendering.
+BKM Kaplanlar is a Turkish-language, multi-page student team website. The frontend uses HTML, CSS, and vanilla JavaScript; the backend uses Go and Gin to serve pages and assets on port `3000`.
 
-## Technical Architecture
+## Pages and assets
 
-```
-┌─────────────────────────────────────────────────────┐
-│                  BKM Tigers Website                  │
-├─────────────────────────────────────────────────────┤
-│  Frontend (web/)          │   Backend (backend/)    │
-│  ┌─────────────────────┐  │  ┌───────────────────┐  │
-│  │ index.html          │  │  │ main.go (Gin)     │  │
-│  │ script.js           │  │  │ :8080 static serve│  │
-│  │ style.css           │  │  │ Go 1.27+ runtime   │  │
-│  └─────────────────────┘  │  └───────────────────┘  │
-└─────────────────────────────────────────────────────┘
-```
+- `web/index.html` — homepage
+- `web/projects.html` — project directory
+- `web/project-*.html` — individual TÜBİTAK, TEKNOFEST, LEGO SPIKE, LEGO VEX, and coding pages
+- `web/members.html`, `web/events.html`, `web/support.html`, `web/contact.html` — team and utility pages
+- `web/style.css`, `web/script.js` — shared styles and interactions
+- `web/support.css`, `web/support.js` — support-page styles and interactions
+- `web/project-detail.css` — shared project detail-page styles
+- `web/admin.html`, `web/admin.css`, `web/admin.js` — Turkish admin dashboard and interface
+- `backend/main.go` — Gin routes and static asset serving
+- `backend/admin.go` — password-based admin sessions and in-memory page statistics
 
-## Development Workflow
+Keep visible website copy in Turkish, preserve responsive and accessible behavior, and respect reduced-motion preferences when adding animations.
 
-### 1. Backend Development (Go)
-
-**Primary Commands:**
+## Development
 
 ```bash
-# Build the server
-cd kaplanlar/backend
-go build -o bkm-server main.go
-
-# Run development server
-go run main.go
-
-# Check dependencies
-go mod tidy
+cd backend
+go run .
 ```
 
-**Backend Responsibilities:**
-- Serve static files from `../web/` directory
-- Handle HTTP requests for index, CSS, JS assets
-- Provide custom 404 pages
-- Configurable via Gin router
+Open `http://localhost:3000`. Run `go test ./...` from `backend/` to verify the Go server.
 
-### 2. Frontend Development (HTML/CSS/JS)
+Set `ADMIN_PASSWORD` to enable dashboard login. For local HTTP development, set `ADMIN_COOKIE_SECURE=false`; keep secure cookies enabled on HTTPS deployments.
 
-**File Structure:**
-
-| File | Size | Purpose |
-|------|------|---------|
-| `index.html` | 7KB | Main page structure with sections |
-| `style.css` | 15KB | Complete styling + animations |
-| `script.js` | 15KB | Interactive logic and effects |
-
-### 3. GitHub Actions
-
-**Stale Issues/PRs Cleanup:**
-- Runs weekly at `13:26 UTC`
-- Labels inactive items as `no-issue-activity` / `no-pr-activity`
-- Auto-closes after 90 days of inactivity
-
-## Deployment Strategy
-
-### Local Testing
-```bash
-cd kaplanlar/backend
-go run main.go
-# Visit http://localhost:8080
-```
-
-### Production (Conceptual)
-1. Backend compiled binary deployed to server
-2. Static files served via Nginx/Apache or CDN
-3. Contact form ready for backend integration (PHP/Node.js/Python)
-
-## Common Tasks
-
-### Restart Development Server
-```bash
-cd kaplanlar/backend
-go run main.go
-```
-
-### Clear Browser Cache & Reload
-- Delete browser cache or use "Hard Reload" (Ctrl+Shift+R)
-
-### Check Dependencies
-```bash
-cd kaplanlar/backend
-go mod download
-go list -m all
-```
-
-## Known Issues & TODOs
-
-1. **Images**: Gallery uses placeholder Unsplash images - replace with actual team photos
-2. **SSL**: Needs HTTPS setup for production deployment
-
-## Useful References
-
-- Go Gin Documentation: https://gin-gonic.com/
-- GitHub Actions Stale: https://github.com/actions/stale
-
+The contact form is not connected to message delivery. Member profiles and photos are examples and should be replaced with approved team information before production use.

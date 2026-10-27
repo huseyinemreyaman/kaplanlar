@@ -327,7 +327,7 @@
     const contents = [
       "BEGIN:VCALENDAR",
       "VERSION:2.0",
-      "PRODID:-//BKM Tigers//Etkinlik Planlayici//TR",
+      "PRODID:-//BKM Kaplanlar//Etkinlik Planlayici//TR",
       "CALSCALE:GREGORIAN",
       "BEGIN:VEVENT",
       `UID:${activity.id}@bkmtigers.local`,
@@ -343,7 +343,7 @@
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = `${activity.date}-bkm-tigers.ics`;
+    link.download = `${activity.date}-bkm-kaplanlar.ics`;
     link.click();
     window.setTimeout(() => URL.revokeObjectURL(url), 1000);
     if (eventStatus) {

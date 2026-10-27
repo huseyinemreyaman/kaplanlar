@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c141b">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="BKM Kaplanlar site yönetim paneli.">
+  <title>Yönetim paneli — BKM Kaplanlar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/admin.css">
+  <script src="/admin.js" defer></script>
+</head>
+<body>
+  <header class="admin-header">
+    <a class="admin-brand" href="/" aria-label="BKM Kaplanlar ana sayfasına dön"><span class="admin-mark">BK</span><span>BKM <b>Kaplanlar</b></span></a>
+    <a class="back-link" href="/">Siteye dön <span aria-hidden="true">↗</span></a>
+  </header>
+  <main class="admin-main">
+    <section class="login-panel" id="loginPanel">
+      <p class="eyebrow"><span class="status-dot"></span> YÖNETİCİ ERİŞİMİ</p>
+      <h1>Yönetim paneli</h1>
+      <p class="intro">Site istatistiklerini görüntülemek için yönetici parolanla giriş yap.</p>
+      <form id="loginForm">
+        <label for="adminPassword">Yönetici parolası</label>
+        <div class="password-field">
+          <input id="adminPassword" name="password" type="password" autocomplete="current-password" required>
+          <button id="passwordVisibility" type="button" aria-label="Parolayı göster" aria-pressed="false">Göster</button>
+        </div>
+        <button class="primary-button" id="loginButton" type="submit">Giriş yap <span aria-hidden="true">→</span></button>
+        <p class="feedback" id="loginFeedback" role="status" aria-live="polite"></p>
+      </form>
+      <p class="security-note">Parola sunucuya güvenli oturum açmak için gönderilir; tarayıcıda saklanmaz.</p>
+    </section>
+
+    <section class="dashboard" id="dashboard" hidden>
+      <div class="dashboard-heading">
+        <div><p class="eyebrow"><span class="status-dot"></span> BKM KAPLANLAR · YÖNETİM</p><h1>Site istatistikleri</h1><p class="dashboard-updated" id="updatedAt">İstatistikler alınıyor…</p></div>
+        <div class="dashboard-actions"><button class="secondary-button" id="refreshButton" type="button">Yenile <span aria-hidden="true">↻</span></button><button class="secondary-button logout-button" id="logoutButton" type="button">Oturumu kapat</button></div>
+      </div>
+
+      <div class="metrics-grid">
+        <article class="metric-card"><span class="metric-label">Toplam sayfa görüntüleme</span><strong id="totalViews">—</strong><small>Sunucu açıldığından beri</small></article>
+        <article class="metric-card metric-highlight"><span class="metric-label">Son 24 saat</span><strong id="recentViews">—</strong><small>Sayfa görüntüleme</small></article>
+        <article class="metric-card"><span class="metric-label">Sunucu çalışma süresi</span><strong class="uptime-value" id="uptime">—</strong><small>Son başlatmadan beri</small></article>
+      </div>
+
+      <section class="traffic-panel" aria-labelledby="trafficHeading">
+        <div class="panel-heading"><div><p class="eyebrow">İÇERİK ÖZETİ</p><h2 id="trafficHeading">Sayfalara göre ziyaretler</h2></div><span class="live-indicator"><i></i> CANLI VERİ</span></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">Sayfa</th><th scope="col">Toplam görüntüleme</th><th scope="col">Pay</th></tr></thead>
+            <tbody id="pageStatistics"><tr><td colspan="3">İstatistikler yükleniyor…</td></tr></tbody>
+          </table>
+        </div>
+        <p class="empty-traffic" id="emptyTraffic" hidden>Henüz sayfa ziyareti kaydedilmedi. İstatistikler ziyaretçi kimliği veya IP adresi saklamaz.</p>
+      </section>
+      <p class="data-note"><span aria-hidden="true">ⓘ</span> Ziyaret sayıları sunucu belleğinde tutulur ve sunucu yeniden başladığında sıfırlanır. Ziyaretçi kimliği veya IP adresi kaydedilmez.</p>
+      <p class="feedback dashboard-feedback" id="dashboardFeedback" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+  <footer class="admin-footer"><span>© <span data-year></span> BKM Kaplanlar</span><span>Yönetim paneli · Yetkili kullanım</span></footer>
+</body>
+</html>
