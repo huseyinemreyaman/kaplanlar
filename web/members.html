@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c141b">
+  <meta name="description" content="BKM Tigers ekibiyle tanışın. Robotik, bilim ve kodlama takımımızın üyeleri.">
+  <title>Ekibimiz — BKM Tigers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="BKM Tigers ana sayfa"><span class="brand-mark">BT</span><span>BKM <b>Tigers</b></span></a>
+    <button class="theme-toggle" type="button" aria-label="Açık temaya geç" title="Temayı değiştir"><span aria-hidden="true">☼</span></button>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menüyü aç"><span></span><span></span></button>
+    <nav class="site-nav" id="site-nav" aria-label="Ana navigasyon">
+      <a href="/">Ana sayfa</a><a href="/projects">Projeler</a><a class="active" href="/members">Ekibimiz</a><a href="/events">Etkinlik planla</a><a href="/support">Destek ol</a><a class="nav-cta" href="/contact">İletişim <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main>
+    <section class="page-hero members-hero">
+      <div class="page-hero-inner">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> Farklı fikirler, ortak bir masa</p>
+        <h1>İnsanlarla tanış.<br><span>Takımı keşfet.</span></h1>
+        <p>Her projenin arkasında merak eden, deneyen ve birbirinden öğrenen insanlar var. Burası bizim takımımız.</p>
+        <div class="page-meta"><span>EKİP PROFİLLERİ</span><span class="meta-line"></span><span>ÖRNEK KADRO</span></div>
+      </div>
+      <div class="page-hero-art"><img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1100&q=85" alt="Birlikte çalışan öğrenci ekibi" fetchpriority="high"><span class="photo-caption">Takım çalışması · Örnek görsel</span></div>
+    </section>
+
+    <section class="section team-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">Takım arkadaşları</p><h2>Bir arada daha <span>iyiyiz.</span></h2></div>
+        <p class="heading-aside">İsimler ve fotoğraflar bu tasarım için örnek olarak kullanılmıştır. Gerçek ekip bilgileriyle kolayca değiştirilebilir.</p>
+      </div>
+      <div class="team-tools">
+        <label class="search-wrap"><span aria-hidden="true">⌕</span><input id="memberSearch" type="search" placeholder="İsim veya ilgi alanı ara" aria-label="Üyelerde isim veya ilgi alanı ara"></label>
+        <span class="member-count" id="memberCount" aria-live="polite">6 takım arkadaşı</span>
+      </div>
+      <div class="filter-chips" role="group" aria-label="Takım rolüne göre filtrele">
+        <button class="filter-chip active" type="button" data-member-filter="all" aria-pressed="true">Tümü</button>
+        <button class="filter-chip" type="button" data-member-filter="robotik" aria-pressed="false">Robotik</button>
+        <button class="filter-chip" type="button" data-member-filter="kodlama" aria-pressed="false">Kodlama</button>
+        <button class="filter-chip" type="button" data-member-filter="bilim" aria-pressed="false">Bilim</button>
+        <button class="filter-chip" type="button" data-member-filter="tasarım" aria-pressed="false">Tasarım</button>
+      </div>
+      <div class="team-grid" id="teamGrid">
+        <article class="member-card" data-member="ece yılmaz mekanik tasarım lego spike" data-skill="robotik tasarım">
+          <div class="member-photo"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=85" alt="Örnek ekip üyesi Ece Yılmaz" loading="lazy"><span class="member-initial">01</span></div>
+          <div class="member-info"><div><h3>Ece Yılmaz</h3><span>Mekanik tasarım</span></div><span class="member-mark" aria-hidden="true">↗</span></div>
+        </article>
+        <article class="member-card" data-member="arda demir yazılım coding" data-skill="kodlama">
+          <div class="member-photo"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=85" alt="Örnek ekip üyesi Arda Demir" loading="lazy"><span class="member-initial">02</span></div>
+          <div class="member-info"><div><h3>Arda Demir</h3><span>Yazılım &amp; kodlama</span></div><span class="member-mark" aria-hidden="true">↗</span></div>
+        </article>
+        <article class="member-card" data-member="deniz aksoy araştırma tübitak" data-skill="bilim">
+          <div class="member-photo"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=700&q=85" alt="Örnek ekip üyesi Deniz Aksoy" loading="lazy"><span class="member-initial">03</span></div>
+          <div class="member-info"><div><h3>Deniz Aksoy</h3><span>Araştırma &amp; bilim</span></div><span class="member-mark" aria-hidden="true">↗</span></div>
+        </article>
+        <article class="member-card" data-member="mert kaya elektronik vex" data-skill="robotik">
+          <div class="member-photo"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=700&q=85" alt="Örnek ekip üyesi Mert Kaya" loading="lazy"><span class="member-initial">04</span></div>
+          <div class="member-info"><div><h3>Mert Kaya</h3><span>Elektronik &amp; robotik</span></div><span class="member-mark" aria-hidden="true">↗</span></div>
+        </article>
+        <article class="member-card" data-member="selin çelik tasarım teknofest" data-skill="tasarım">
+          <div class="member-photo"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=700&q=85" alt="Örnek ekip üyesi Selin Çelik" loading="lazy"><span class="member-initial">05</span></div>
+          <div class="member-info"><div><h3>Selin Çelik</h3><span>Tasarım &amp; iletişim</span></div><span class="member-mark" aria-hidden="true">↗</span></div>
+        </article>
+        <article class="member-card" data-member="emir şahin programlama lego spike" data-skill="kodlama robotik">
+          <div class="member-photo"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=85" alt="Örnek ekip üyesi Emir Şahin" loading="lazy"><span class="member-initial">06</span></div>
+          <div class="member-info"><div><h3>Emir Şahin</h3><span>Programlama</span></div><span class="member-mark" aria-hidden="true">↗</span></div>
+        </article>
+      </div>
+      <p class="empty-state" id="memberEmpty" hidden>Bu aramayla eşleşen bir ekip arkadaşı bulamadık.</p>
+    </section>
+    <section class="join-banner">
+      <div><p class="eyebrow">Yeni fikirlere yer var</p><h2>Takımın parçası ol.</h2><p>Merakını ve üretme isteğini bizimle paylaşmak için bize yaz.</p></div>
+      <a class="button button-light" href="/contact">Tanışalım <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <a class="brand brand-light" href="/"><span class="brand-mark">BT</span><span>BKM <b>Tigers</b></span></a><p>Merakla öğreniyor, birlikte üretiyoruz.</p>
+    <div class="footer-links"><a href="/">Ana sayfa</a><a href="/projects">Projeler</a><a href="/events">Etkinlik planla</a><a href="/support">Destek ol</a><a href="/contact">İletişim</a></div><small>© <span data-year></span> BKM Tigers</small>
+  </footer>
+  <button class="back-to-top" type="button" aria-label="Sayfanın başına dön">↑</button>
+</body>
+</html>

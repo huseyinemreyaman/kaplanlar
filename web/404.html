@@ -1,58 +1,32 @@
- <!doctype html>
-<html lang="en">
+<!doctype html>
+<html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 — Page Not Found</title>
-    <style>
-        body {
-            margin: 0;
-            min-height: 100vh;
-            display: grid;
-            place-items: center;
-            background: #111318;
-            color: #e5e7eb;
-            font-family: system-ui, sans-serif;
-            text-align: center;
-        }
-
-        main {
-            padding: 2rem;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: clamp(5rem, 15vw, 9rem);
-            letter-spacing: -0.08em;
-            color: #8b9cff;
-        }
-
-        p {
-            color: #a1a1aa;
-        }
-
-        a {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.75rem 1.25rem;
-            border-radius: 0.5rem;
-            background: #8b9cff;
-            color: #111318;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        a:hover {
-            background: #aab5ff;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c141b">
+  <title>Sayfa bulunamadı — BKM Tigers</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, sans-serif; background: #0c141b; color: #e7eef4; }
+    * { box-sizing: border-box; }
+    body { display: grid; min-height: 100vh; margin: 0; place-items: center; padding: 24px; }
+    main { max-width: 550px; text-align: center; }
+    .mark { display: grid; width: 48px; height: 48px; margin: 0 auto 34px; place-items: center; border-radius: 15px 15px 15px 5px; background: #d9ef79; color: #102a43; font-size: .8rem; font-weight: 800; }
+    .code { margin: 0; color: #8db4ff; font-size: clamp(5rem, 20vw, 9rem); font-weight: 800; letter-spacing: -.09em; line-height: .9; }
+    h1 { margin: 25px 0 10px; font-size: clamp(1.6rem, 6vw, 2.2rem); letter-spacing: -.05em; }
+    p { color: #aab8c2; line-height: 1.7; }
+    .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 26px; }
+    a { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; padding: 0 17px; border: 1px solid #3b4b57; border-radius: 5px; color: #e7eef4; font-size: .85rem; font-weight: 700; text-decoration: none; }
+    a:first-child { border-color: #d9ef79; background: #d9ef79; color: #102a43; }
+    a:focus-visible { outline: 3px solid #8db4ff; outline-offset: 3px; }
+  </style>
 </head>
 <body>
-    <main>
-        <h1>404</h1>
-        <h2>Sayfa bulunamadı</h2>
-        <p>Aradığınız sayfa mevcut değil.</p>
-        <a href="/">Eve dön</a>
-    </main>
+  <main>
+    <span class="mark" aria-hidden="true">BT</span>
+    <p class="code">404</p>
+    <h1>Bu sayfayı bulamadık.</h1>
+    <p>Bağlantı değişmiş ya da yanlış yazılmış olabilir. İstersen ana sayfaya dön veya projelerimize göz at.</p>
+    <div class="actions"><a href="/">Ana sayfa</a><a href="/projects">Projeleri keşfet</a></div>
+  </main>
 </body>
 </html>

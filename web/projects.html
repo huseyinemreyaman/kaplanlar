@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c141b">
+  <meta name="description" content="BKM Tigers proje alanlarını keşfet; bilim, robotik ve kodlama projelerimizi incele.">
+  <title>Projeler — BKM Tigers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="BKM Tigers ana sayfa"><span class="brand-mark">BT</span><span>BKM <b>Tigers</b></span></a>
+    <button class="theme-toggle" type="button" aria-label="Açık temaya geç" title="Temayı değiştir"><span aria-hidden="true">☼</span></button>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menüyü aç"><span></span><span></span></button>
+    <nav class="site-nav" id="site-nav" aria-label="Ana navigasyon">
+      <a href="/">Ana sayfa</a><a class="active" href="/projects">Projeler</a><a href="/members">Ekibimiz</a><a href="/events">Etkinlik planla</a><a href="/support">Destek ol</a><a class="nav-cta" href="/contact">İletişim <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main>
+    <section class="page-hero project-hero">
+      <div class="page-hero-inner">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> Merakımızın peşindeyiz</p>
+        <h1>Beş alan.<br><span>Sayısız fikir.</span></h1>
+        <p>Bilimsel araştırmadan robot tasarımına, kodlamadan takım stratejisine kadar farklı alanlarda üretiyoruz. Her proje, yeni bir şey öğrenmek için bir fırsat.</p>
+        <div class="page-meta"><span>ARAŞTIR</span><span class="meta-line"></span><span>TASARLA</span><span class="meta-line"></span><span>DENE</span></div>
+      </div>
+      <div class="project-hero-note"><span class="project-hero-symbol">✳</span><p>En iyi fikirler,<br><strong>denemekten korkmayanlardan çıkar.</strong></p><span class="hero-note-index">BKM / 05</span></div>
+    </section>
+    <section class="section project-directory">
+      <div class="section-heading">
+        <div><p class="eyebrow">Proje alanlarımız</p><h2>Birlikte ne <span>üretebiliriz?</span></h2></div>
+        <p class="heading-aside">İlgi alanına göre süz, projeleri kaydet ve her çalışma alanının ayrıntılarını keşfet.</p>
+      </div>
+      <div class="project-tools">
+        <label class="search-wrap"><span aria-hidden="true">⌕</span><input id="projectSearch" type="search" placeholder="Proje veya konu ara" aria-label="Projelerde ara"></label>
+        <span class="saved-count" id="savedProjectCount" aria-live="polite">0 kayıtlı proje</span>
+      </div>
+      <div class="filter-chips" role="group" aria-label="Proje kategorisine göre filtrele">
+        <button class="filter-chip active" type="button" data-project-filter="all" aria-pressed="true">Tümü</button>
+        <button class="filter-chip" type="button" data-project-filter="bilim" aria-pressed="false">Bilim</button>
+        <button class="filter-chip" type="button" data-project-filter="robotik" aria-pressed="false">Robotik</button>
+        <button class="filter-chip" type="button" data-project-filter="kodlama" aria-pressed="false">Kodlama</button>
+        <button class="filter-chip saved-filter" type="button" data-project-filter="saved" aria-pressed="false">Kaydettiklerim</button>
+      </div>
+      <div class="directory-grid" id="projectDirectory">
+        <article class="directory-card" data-project-category="bilim" data-project-name="tübitak bilim araştırma deney proje">
+          <div class="directory-top"><span class="project-icon icon-science" aria-hidden="true">◉</span><button class="save-project" type="button" data-project-id="tubitak" aria-pressed="false" aria-label="TÜBİTAK projesini kaydet">♡</button></div>
+          <p class="project-kicker">Bilim · Araştırma</p><h3>TÜBİTAK</h3>
+          <p>Merak ettiğimiz soruları araştırıp bilimsel yöntemlerle test ediyor, bulgularımızı paylaşılabilir projelere dönüştürüyoruz.</p>
+          <details><summary>Bu alanda neler yapıyoruz?<span aria-hidden="true">＋</span></summary><p>Araştırma sorusu oluşturma, kaynak tarama, deney tasarlama, gözlem yapma ve sonuçları sunma adımlarını birlikte yürütüyoruz.</p></details>
+          <a class="project-detail-link" href="/projects/tubitak">TÜBİTAK çalışmalarını keşfet <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="directory-card" data-project-category="bilim robotik" data-project-name="teknofest teknoloji inovasyon mühendislik">
+          <div class="directory-top"><span class="project-icon icon-tech" aria-hidden="true">⌁</span><button class="save-project" type="button" data-project-id="teknofest" aria-pressed="false" aria-label="TEKNOFEST projesini kaydet">♡</button></div>
+          <p class="project-kicker">Teknoloji · İnovasyon</p><h3>TEKNOFEST</h3>
+          <p>Bir ihtiyacı fark ediyor, takım olarak çözüm tasarlıyor ve prototipimizi geliştirerek fikirlerimizi hayata geçiriyoruz.</p>
+          <details><summary>Bu alanda neler yapıyoruz?<span aria-hidden="true">＋</span></summary><p>Fikir geliştirme, görev paylaşımı, prototipleme ve sunum hazırlığını ekipçe öğreniyoruz. Katılım alanları dönemlere göre değişebilir.</p></details>
+          <a class="project-detail-link" href="/projects/teknofest">TEKNOFEST çalışmalarını keşfet <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="directory-card" data-project-category="robotik" data-project-name="lego spike robot sensör mekanik">
+          <div class="directory-top"><span class="project-icon icon-spike" aria-hidden="true">▦</span><button class="save-project" type="button" data-project-id="spike" aria-pressed="false" aria-label="LEGO SPIKE projesini kaydet">♡</button></div>
+          <p class="project-kicker">Robotik · İlk prototipler</p><h3>LEGO SPIKE</h3>
+          <p>Parçaları bir araya getiriyor, sensör ve motorları kodlayarak robotlarımıza görevler veriyoruz.</p>
+          <details><summary>Bu alanda neler yapıyoruz?<span aria-hidden="true">＋</span></summary><p>Mekanik tasarım, sensör okuma, blok tabanlı programlama ve robotu tekrar tekrar test etme becerileri kazanıyoruz.</p></details>
+          <a class="project-detail-link" href="/projects/lego-spike">LEGO SPIKE çalışmalarını keşfet <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="directory-card" data-project-category="robotik" data-project-name="lego vex robot mühendislik strateji tasarım">
+          <div class="directory-top"><span class="project-icon icon-vex" aria-hidden="true">✳</span><button class="save-project" type="button" data-project-id="vex" aria-pressed="false" aria-label="LEGO VEX projesini kaydet">♡</button></div>
+          <p class="project-kicker">Robotik · Strateji</p><h3>LEGO VEX</h3>
+          <p>Mühendislik tasarımı ve programlamayı stratejiyle birleştirerek görev odaklı robotlar geliştiriyoruz.</p>
+          <details><summary>Bu alanda neler yapıyoruz?<span aria-hidden="true">＋</span></summary><p>Robot mekanizması, kontrol kodu, sürüş denemeleri ve takım iletişimini aynı süreçte deneyimliyoruz.</p></details>
+          <a class="project-detail-link" href="/projects/lego-vex">LEGO VEX çalışmalarını keşfet <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="directory-card" data-project-category="kodlama" data-project-name="kodlama coding web yazılım programlama oyun">
+          <div class="directory-top"><span class="project-icon icon-code" aria-hidden="true">&lt;/&gt;</span><button class="save-project" type="button" data-project-id="coding" aria-pressed="false" aria-label="Kodlama projesini kaydet">♡</button></div>
+          <p class="project-kicker">Yazılım · Dijital üretim</p><h3>KODLAMA</h3>
+          <p>Problemleri küçük parçalara ayırıyor; web, robot ve oyun projeleriyle dijital çözümler üretiyoruz.</p>
+          <details><summary>Bu alanda neler yapıyoruz?<span aria-hidden="true">＋</span></summary><p>Algoritmik düşünme, temel programlama, web geliştirme ve ekip içinde kod gözden geçirme pratiklerini öğreniyoruz.</p></details>
+          <a class="project-detail-link" href="/projects/kodlama">Kodlama çalışmalarını keşfet <span aria-hidden="true">↗</span></a>
+        </article>
+      </div>
+      <p class="empty-state" id="projectEmpty" hidden>Bu filtreyle eşleşen proje yok. Başka bir arama deneyebilirsin.</p>
+    </section>
+    <section class="join-banner">
+      <div><p class="eyebrow">Bir sonraki fikir seninki olabilir</p><h2>Birlikte deneyelim.</h2><p>Merak ettiğin bir konu varsa, ekiple paylaş ve ilk adımı birlikte atalım.</p></div>
+      <a class="button button-light" href="/contact">Fikrini paylaş <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <a class="brand brand-light" href="/"><span class="brand-mark">BT</span><span>BKM <b>Tigers</b></span></a><p>Merakla öğreniyor, birlikte üretiyoruz.</p>
+    <div class="footer-links"><a href="/">Ana sayfa</a><a href="/members">Ekibimiz</a><a href="/events">Etkinlik planla</a><a href="/support">Destek ol</a><a href="/contact">İletişim</a></div><small>© <span data-year></span> BKM Tigers</small>
+  </footer>
+  <button class="back-to-top" type="button" aria-label="Sayfanın başına dön">↑</button>
+</body>
+</html>

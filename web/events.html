@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c141b">
+  <meta name="description" content="BKM Tigers etkinlik planlayıcısı ile takım toplantılarını ve atölyeleri düzenle, takvimine ekle.">
+  <title>Etkinlik planla — BKM Tigers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="BKM Tigers ana sayfa"><span class="brand-mark">BT</span><span>BKM <b>Tigers</b></span></a>
+    <button class="theme-toggle" type="button" aria-label="Açık temaya geç" title="Temayı değiştir"><span aria-hidden="true">☼</span></button>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menüyü aç"><span></span><span></span></button>
+    <nav class="site-nav" id="site-nav" aria-label="Ana navigasyon">
+      <a href="/">Ana sayfa</a><a href="/projects">Projeler</a><a href="/members">Ekibimiz</a><a class="active" href="/events">Etkinlik planla</a><a href="/support">Destek ol</a><a class="nav-cta" href="/contact">İletişim <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main>
+    <section class="page-hero events-hero">
+      <div class="page-hero-inner">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> Takım ajandası</p>
+        <h1>Bir araya gel.<br><span>Bir şeyler üret.</span></h1>
+        <p>Toplantılarını, çalışma seanslarını ve atölyelerini planla. Etkinliklerin bu tarayıcıda saklanır; istersen takvim dosyası olarak dışa aktarabilirsin.</p>
+        <div class="page-meta"><span>YEREL KAYIT</span><span class="meta-line"></span><span>TAKVİME AKTAR</span></div>
+      </div>
+      <div class="event-hero-card"><span class="calendar-mark">BKM<br><b>ATÖLYE</b></span><div><span class="event-status-dot"></span><strong>Birlikte öğrenme zamanı</strong><small>Planını oluştur, ekibinle paylaş.</small></div></div>
+    </section>
+    <section class="section event-planner-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">Kendi takvimini oluştur</p><h2>Bir sonraki buluşma <span>ne zaman?</span></h2></div>
+        <p class="heading-aside">Bu planlayıcı etkinlikleri yalnızca kullandığın cihazda saklar. Takım arkadaşlarınla paylaşmak için `.ics` dosyasını indirebilirsin.</p>
+      </div>
+      <div class="planner-layout">
+        <form class="event-form" id="eventForm">
+          <div class="form-heading"><p class="eyebrow">Yeni etkinlik</p><h2>Plan ekle</h2><p>Etkinlik bilgilerini doldur.</p></div>
+          <label for="eventTitle">Etkinlik adı <span>*</span><input id="eventTitle" name="title" type="text" maxlength="80" placeholder="Örn. Robotik çalışma seansı" required></label>
+          <div class="form-row">
+            <label for="eventDate">Tarih <span>*</span><input id="eventDate" name="date" type="date" required></label>
+            <label for="eventTime">Saat <span>*</span><input id="eventTime" name="time" type="time" value="15:00" required></label>
+          </div>
+          <label for="eventType">Etkinlik türü
+            <select id="eventType" name="type"><option>Takım toplantısı</option><option>Robotik atölyesi</option><option>Kodlama seansı</option><option>Proje çalışması</option><option>Diğer</option></select>
+          </label>
+          <label for="eventNotes">Not <span class="optional">(isteğe bağlı)</span><textarea id="eventNotes" name="notes" rows="3" maxlength="240" placeholder="Gerekli malzemeler veya gündem..."></textarea></label>
+          <button class="button button-dark form-submit" type="submit">Etkinlik ekle <span aria-hidden="true">＋</span></button>
+          <p class="form-status" id="eventStatus" role="status" aria-live="polite"></p>
+        </form>
+        <div class="event-list-wrap">
+          <div class="event-list-heading"><div><p class="eyebrow">Planların</p><h2 id="eventListTitle">Etkinlik listesi</h2></div><button class="clear-draft" id="clearEvents" type="button">Tümünü temizle</button></div>
+          <div class="event-list" id="eventList" aria-live="polite"></div>
+          <div class="event-empty" id="eventEmpty"><span aria-hidden="true">◷</span><h3>Henüz plan yok.</h3><p>İlk etkinliğini ekle, sonra takvimine kaydet.</p></div>
+          <p class="local-note"><span aria-hidden="true">▣</span> Etkinliklerin sadece bu tarayıcıda saklanır. Tarayıcı verileri silinirse planlar da silinir.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <a class="brand brand-light" href="/"><span class="brand-mark">BT</span><span>BKM <b>Tigers</b></span></a><p>Merakla öğreniyor, birlikte üretiyoruz.</p>
+    <div class="footer-links"><a href="/">Ana sayfa</a><a href="/projects">Projeler</a><a href="/members">Ekibimiz</a><a href="/support">Destek ol</a><a href="/contact">İletişim</a></div><small>© <span data-year></span> BKM Tigers</small>
+  </footer>
+  <button class="back-to-top" type="button" aria-label="Sayfanın başına dön">↑</button>
+</body>
+</html>

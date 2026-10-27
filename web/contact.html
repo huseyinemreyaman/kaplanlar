@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c141b">
+  <meta name="description" content="BKM Tigers ile iletişime geçin; projeler, takım üyeliği ve iş birlikleri hakkında bize yazın.">
+  <title>İletişim — BKM Tigers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="BKM Tigers ana sayfa"><span class="brand-mark">BT</span><span>BKM <b>Tigers</b></span></a>
+    <button class="theme-toggle" type="button" aria-label="Açık temaya geç" title="Temayı değiştir"><span aria-hidden="true">☼</span></button>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menüyü aç"><span></span><span></span></button>
+    <nav class="site-nav" id="site-nav" aria-label="Ana navigasyon">
+      <a href="/">Ana sayfa</a><a href="/projects">Projeler</a><a href="/members">Ekibimiz</a><a href="/events">Etkinlik planla</a><a href="/support">Destek ol</a><a class="nav-cta active" href="/contact">İletişim <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main>
+    <section class="contact-page">
+      <div class="contact-intro">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> İletişim</p>
+        <h1>Bir merhaba,<br><span>bir fikir, bir soru.</span></h1>
+        <p>Projelerimiz hakkında konuşmak, takıma katılmak veya iş birliği yapmak için bize yaz. Mesajını okuyup nasıl ilerleyebileceğimizi birlikte düşünelim.</p>
+        <div class="contact-aside">
+          <div class="aside-rule"></div>
+          <div><span class="aside-label">BİZE NE İÇİN YAZABİLİRSİN?</span><p>Takıma katılım · Proje soruları<br>Mentorluk · İş birliği önerileri</p></div>
+        </div>
+        <div class="contact-note"><span aria-hidden="true">✳</span> Bu form şu an örnek arayüzdür; mesaj gönderimi henüz etkin değil.</div>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="form-heading"><p class="eyebrow">Mesajını hazırla</p><h2>Senden haber alalım.</h2><p>Yıldızlı alanlar zorunludur.</p></div>
+        <p class="draft-status" id="draftStatus" role="status" aria-live="polite"></p>
+        <div class="form-row">
+          <label for="contactName">Adın <span>*</span><input id="contactName" name="name" type="text" autocomplete="name" placeholder="Adını yaz" required></label>
+          <label for="contactEmail">E-posta adresin <span>*</span><input id="contactEmail" name="email" type="email" autocomplete="email" placeholder="sen@ornek.com" required></label>
+        </div>
+        <label for="contactTopic">Konu
+          <select id="contactTopic" name="topic">
+            <option value="">Bir konu seç</option><option>Takıma katılım</option><option>Projeler hakkında</option><option>Mentorluk / destek</option><option>İş birliği</option><option>Diğer</option>
+          </select>
+        </label>
+        <label for="contactMessage">Mesajın <span>*</span><textarea id="contactMessage" name="message" rows="5" placeholder="Aklındakileri bizimle paylaş..." required></textarea></label>
+        <button class="button button-dark form-submit" type="submit">Mesajı gönder <span aria-hidden="true">↗</span></button>
+        <button class="clear-draft" id="clearDraft" type="button">Taslağı temizle</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        <p class="form-privacy">Bilgilerin yalnızca iletişim amacıyla kullanılmak üzere istenir. Form gönderimi etkinleştirildiğinde bu metni kurumunuzun gizlilik politikasına göre güncelleyin.</p>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <a class="brand brand-light" href="/"><span class="brand-mark">BT</span><span>BKM <b>Tigers</b></span></a><p>Merakla öğreniyor, birlikte üretiyoruz.</p>
+    <div class="footer-links"><a href="/">Ana sayfa</a><a href="/projects">Projeler</a><a href="/members">Ekibimiz</a><a href="/events">Etkinlik planla</a><a href="/support">Destek ol</a></div><small>© <span data-year></span> BKM Tigers</small>
+  </footer>
+  <button class="back-to-top" type="button" aria-label="Sayfanın başına dön">↑</button>
+</body>
+</html>

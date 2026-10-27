@@ -1,258 +1,129 @@
-
-<!DOCTYPE html>
-<html lang="tr">
+<!doctype html>
+<html lang="tr" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#071b46">
-
-  <title>BKM Tigers 💙🐯</title>
-
-  <meta
-    name="description"
-    content="BKM Tigers dünyasına hoş geldin! Takımımızı keşfet, galerimize göz at ve bize mesaj gönder."
-  >
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c141b">
+  <meta name="description" content="BKM Tigers; robotik, bilim ve kodlama projeleri üreten öğrenci takımı.">
+  <title>BKM Tigers — Birlikte üretiriz</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/script.js" defer></script>
 </head>
-
 <body>
-
-  <!-- YÜKLEME EKRANI -->
-  <div id="loader" class="loader">
-    <div class="loader-content">
-      <div class="loader-paw" aria-hidden="true">🐾</div>
-
-      <h1>BKM <span>TIGERS</span></h1>
-      <p class="loader-message">Kaplanlar hazırlanıyor...</p>
-
-      <div
-        class="loader-track"
-        role="progressbar"
-        aria-label="Sayfa yükleniyor"
-        aria-valuemin="0"
-        aria-valuemax="100"
-        aria-valuenow="0"
-        id="loaderTrack"
-      >
-        <div class="loader-progress" id="loaderProgress"></div>
-      </div>
-
-      <p class="loader-percent" id="loaderPercent">0%</p>
-      <div class="loader-stars" aria-hidden="true">✦　✧　✦　✧　✦</div>
-    </div>
-  </div>
-
-  <!-- ARKA PLAN PARÇACIKLARI -->
-  <div
-    class="background-particles"
-    id="particles"
-    aria-hidden="true"
-  ></div>
-
-  <!-- NAVİGASYON -->
-  <nav class="navbar" aria-label="Ana navigasyon">
-    <a href="#home" class="logo">🐯 BKM <span>TIGERS</span></a>
-
-    <div class="nav-links">
-      <a href="#home">Ana Sayfa</a>
-      <a href="#about">Hakkımızda</a>
-      <a href="#gallery">Galeri</a>
-      <a href="#contact">İletişim</a>
-    </div>
-
-    <button
-      class="menu-btn"
-      id="menuBtn"
-      type="button"
-      aria-label="Menüyü aç"
-      aria-expanded="false"
-      aria-controls="site-navigation"
-    >☰</button>
-  </nav>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="BKM Tigers ana sayfa"><span class="brand-mark">BT</span><span>BKM <b>Tigers</b></span></a>
+    <button class="theme-toggle" type="button" aria-label="Açık temaya geç" title="Temayı değiştir"><span aria-hidden="true">☼</span></button>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menüyü aç"><span></span><span></span></button>
+    <nav class="site-nav" id="site-nav" aria-label="Ana navigasyon">
+      <a class="active" href="/">Ana sayfa</a>
+      <a href="/projects">Projeler</a>
+      <a href="/members">Ekibimiz</a>
+      <a href="/events">Etkinlik planla</a>
+      <a href="/support">Destek ol</a>
+      <a class="nav-cta" href="/contact">İletişim <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
 
   <main>
-    <!-- ANA SAYFA -->
-    <section class="hero" id="home">
-      <div class="floating star star1" aria-hidden="true">✦</div>
-      <div class="floating star star2" aria-hidden="true">✧</div>
-      <div class="floating heart" aria-hidden="true">💙</div>
-
-      <div class="hero-text">
-        <p class="tag">💙 BİR TAKIMDAN DAHA FAZLASI</p>
-
-        <h1>
-          WE ARE<br>
-          <span>BKM TIGERS!</span>
-        </h1>
-
-        <p class="description">
-          Gücümüz birlikteliğimizden, enerjimiz dostluğumuzdan!
-          BKM Tigers dünyasına hoş geldin.
-        </p>
-
-        <div class="hero-buttons">
-          <a href="#about" class="btn primary">Bizi Keşfet ✨</a>
-          <a href="#contact" class="btn secondary">Bize Yaz 💌</a>
+    <section class="home-hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> BKM Tigers · Öğrenci robotik takımı</p>
+        <h1>Merakla başlar.<br><span>Birlikte üretiriz.</span></h1>
+        <p class="hero-lede">Fikirleri çalışan robotlara, kodlara ve projelere dönüştürüyoruz. Öğrenmekten, denemekten ve yeniden başlamaktan çekinmeyen bir ekibiz.</p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="#projeler">Projelerimizi keşfet <span aria-hidden="true">↓</span></a>
+          <a class="text-link" href="/members">Ekiple tanış <span aria-hidden="true">↗</span></a>
         </div>
+        <div class="hero-footnote"><span class="mini-avatars" aria-hidden="true"><i>E</i><i>A</i><i>D</i></span><span>Farklı fikirler, ortak bir masa.</span></div>
       </div>
-
-      <div class="mascot">
-        <div class="mascot-circle">
-          <img
-            src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=700&q=85"
-            alt="Kaplan fotoğrafı"
-            fetchpriority="high"
-          >
-        </div>
-
-        <span class="bubble">ROARR! 🐯</span>
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=85" alt="Atölyede bir robotik proje üzerinde çalışan öğrenciler" fetchpriority="high">
+        <div class="image-label"><span class="label-icon">✳</span><span><b>Fikirden prototipe</b><small>Her deneme yeni bir şey öğretir.</small></span></div>
+        <div class="hero-index">01 <span>/</span> 05</div>
       </div>
-
-      <div class="scroll-hint" aria-hidden="true">↓ AŞAĞI İN ↓</div>
+      <div class="hero-side-note" aria-hidden="true">ÖĞREN · DENE · GELİŞTİR</div>
     </section>
 
-    <!-- HAKKIMIZDA -->
-    <section class="about section" id="about">
-      <p class="tag">TANIŞALIM ✨</p>
+    <section class="intro-strip" aria-label="Takım yaklaşımımız">
+      <p>Teknolojiyi sadece tüketmiyor, <strong>birlikte üretiyoruz.</strong></p>
+      <span class="strip-star" aria-hidden="true">✳</span>
+      <p>Bilimden robotiğe, <strong>merakımızın peşindeyiz.</strong></p>
+    </section>
 
-      <h2>Biz <span>BKM Tigers'ız!</span></h2>
-
-      <p class="section-text">
-        Birlikte eğlenen, birlikte öğrenen ve her zaman birbirini
-        destekleyen kocaman bir aileyiz. Her gün yeni bir macera!
-      </p>
-
-      <div class="cards">
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">🤝</div>
-          <h3>Takım Ruhu</h3>
-          <p>Birlikte daha güçlüyüz. Her zaman yan yanayız!</p>
+    <section class="section projects-section" id="projeler">
+      <div class="section-heading">
+        <div><p class="eyebrow">Neler yapıyoruz</p><h2>Fikirlerimiz <span>projeye dönüşüyor.</span></h2></div>
+        <p class="heading-aside">Her alan bize başka bir şey öğretiyor. Birlikte çalışıyor, üretiyor ve öğrendiklerimizi paylaşıyoruz.</p>
+      </div>
+      <div class="project-grid">
+        <article class="project-card project-featured">
+          <span class="project-number">01</span><span class="project-icon icon-science" aria-hidden="true">◉</span>
+          <p class="project-kicker">Bilim ve araştırma</p><h3>TÜBİTAK</h3>
+          <p>Merak ettiğimiz soruları araştırıyor, bilimsel düşünceyle uygulanabilir fikirlere dönüştürüyoruz.</p>
+          <a class="home-project-link" href="/projects/tubitak">Ayrıntıları gör <span aria-hidden="true">↗</span></a>
+          <span class="project-arrow" aria-hidden="true">↗</span>
         </article>
-
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">⚡</div>
-          <h3>Enerji</h3>
-          <p>Bitmeyen heyecan, bolca eğlence ve güzel anılar!</p>
+        <article class="project-card">
+          <span class="project-number">02</span><span class="project-icon icon-tech" aria-hidden="true">⌁</span>
+          <p class="project-kicker">Teknoloji ve inovasyon</p><h3>TEKNOFEST</h3>
+          <p>Takım çalışmasıyla yeni teknolojiler tasarlıyor, fikirlerimizi yarışma heyecanıyla geliştiriyoruz.</p>
+          <a class="home-project-link" href="/projects/teknofest">Ayrıntıları gör <span aria-hidden="true">↗</span></a>
+          <span class="project-arrow" aria-hidden="true">↗</span>
         </article>
-
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">💙</div>
-          <h3>Dostluk</h3>
-          <p>BKM Tigers demek, kocaman bir aile demek!</p>
+        <article class="project-card">
+          <span class="project-number">03</span><span class="project-icon icon-spike" aria-hidden="true">▦</span>
+          <p class="project-kicker">Yap, dene, yeniden yap</p><h3>LEGO SPIKE</h3>
+          <p>Robotlarımızı tasarlıyor, sensörler ve kodla onlara yeni görevler öğretiyoruz.</p>
+          <a class="home-project-link" href="/projects/lego-spike">Ayrıntıları gör <span aria-hidden="true">↗</span></a>
+          <span class="project-arrow" aria-hidden="true">↗</span>
         </article>
+        <article class="project-card">
+          <span class="project-number">04</span><span class="project-icon icon-vex" aria-hidden="true">✳</span>
+          <p class="project-kicker">Mühendislik ve strateji</p><h3>LEGO VEX</h3>
+          <p>Mekanik tasarım, programlama ve stratejiyi bir araya getirerek robotlarımızı geliştiriyoruz.</p>
+          <a class="home-project-link" href="/projects/lego-vex">Ayrıntıları gör <span aria-hidden="true">↗</span></a>
+          <span class="project-arrow" aria-hidden="true">↗</span>
+        </article>
+        <article class="project-card">
+          <span class="project-number">05</span><span class="project-icon icon-code" aria-hidden="true">&lt;/&gt;</span>
+          <p class="project-kicker">Dijital üretim</p><h3>KODLAMA</h3>
+          <p>Problemleri küçük parçalara ayırıyor; web, robot ve oyun projeleriyle çözümler üretiyoruz.</p>
+          <a class="home-project-link" href="/projects/kodlama">Ayrıntıları gör <span aria-hidden="true">↗</span></a>
+          <span class="project-arrow" aria-hidden="true">↗</span>
+        </article>
+      </div>
+      <div class="section-more"><p>Her proje alanında neler yaptığımızı keşfet.</p><a class="button button-outline" href="/projects">Tüm projeleri gör <span aria-hidden="true">↗</span></a></div>
+    </section>
+
+    <section class="story-section">
+      <div class="story-image">
+        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1000&q=85" alt="Bir ekip üyesi elektronik devre üzerinde çalışıyor" loading="lazy">
+        <span class="photo-caption">Atölyeden bir an · Örnek görsel</span>
+      </div>
+      <div class="story-copy">
+        <p class="eyebrow">BKM Tigers'ı tanı</p>
+        <h2>İyi fikirler,<br><span>iyi ekiplerle büyür.</span></h2>
+        <p>Biz; farklı ilgi alanlarını, merakı ve birlikte üretme isteğini aynı takımda buluşturan öğrencileriz. Herkesin katkı sunabileceği bir yer var: tasarım, kod, mekanik ya da yeni bir soru.</p>
+        <a class="text-link" href="/members">Ekibimizi tanı <span aria-hidden="true">↗</span></a>
+        <div class="story-note"><span>✳</span><span>Önemli olan ilk seferde bilmek değil,<br>birlikte öğrenmeye devam etmek.</span></div>
       </div>
     </section>
 
-    <!-- GALERİ -->
-    <section class="gallery section" id="gallery">
-      <p class="tag">GÜZEL ANILAR 📸</p>
-
-      <h2>Tigers <span>Galerisi</span></h2>
-
-      <p class="section-text">
-        Birbirinden güzel fotoğraflar ve unutulmaz anlar!
-      </p>
-
-      <div class="gallery-grid">
-        <img
-          src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=700&q=80"
-          alt="Renkli yaratıcılık"
-          loading="lazy"
-        >
-
-        <img
-          src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=700&q=80"
-          alt="Arkadaşlarla güzel anlar"
-          loading="lazy"
-        >
-
-        <img
-          src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=700&q=80"
-          alt="Takım çalışması"
-          loading="lazy"
-        >
-      </div>
-
-      <p class="gallery-note">
-        📌 Bunlar örnek görsellerdir. Kendi takım fotoğraflarını ekleyebilirsin.
-      </p>
-    </section>
-
-    <!-- İLETİŞİM -->
-    <section class="contact section" id="contact">
-      <p class="tag">BİZE ULAŞ 💌</p>
-
-      <h2>Bir mesaj <span>bırak!</span></h2>
-
-      <p class="section-text">
-        BKM Tigers'a söylemek istediğin bir şey mi var?
-        Mesajını bize yaz!
-      </p>
-
-      <form id="contactForm" class="contact-form">
-        <label for="name">Adın</label>
-        <input
-          id="name"
-          name="name"
-          type="text"
-          placeholder="Adını yaz..."
-          autocomplete="name"
-          required
-        >
-
-        <label for="email">E-posta adresin</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          placeholder="ornek@email.com"
-          autocomplete="email"
-          required
-        >
-
-        <label for="message">Mesajın</label>
-        <textarea
-          id="message"
-          name="message"
-          rows="5"
-          placeholder="Bize bir şeyler yaz 💙"
-          required
-        ></textarea>
-
-        <button type="submit" class="btn primary submit-btn">
-          Mesajı Gönder 💌
-        </button>
-
-        <p id="formStatus" role="status" aria-live="polite"></p>
-      </form>
+    <section class="join-banner">
+      <div><p class="eyebrow">Birlikte daha güçlüyüz</p><h2>Bir fikrin mi var?</h2><p>Takıma katılmak, bir projeyi desteklemek ya da sadece merhaba demek için bize ulaş.</p></div>
+      <a class="button button-light" href="/contact">Bize ulaş <span aria-hidden="true">↗</span></a>
     </section>
   </main>
 
-  <!-- ALT BİLGİ -->
-  <footer>
-    <a href="#home" class="logo">🐯 BKM <span>TIGERS</span></a>
-
-    <p>Sevgiyle, dostlukla ve maviyle! 💙</p>
-
-    <p class="copyright">
-      © <span id="year"></span> BKM Tigers
-    </p>
+  <footer class="site-footer">
+    <a class="brand brand-light" href="/"><span class="brand-mark">BT</span><span>BKM <b>Tigers</b></span></a>
+    <p>Merakla öğreniyor, birlikte üretiyoruz.</p>
+    <div class="footer-links"><a href="/projects">Projeler</a><a href="/members">Ekibimiz</a><a href="/events">Etkinlik planla</a><a href="/support">Destek ol</a><a href="/contact">İletişim</a></div>
+    <small>© <span data-year></span> BKM Tigers</small>
   </footer>
-
-  <!-- YUKARI ÇIK -->
-  <button
-    id="topBtn"
-    type="button"
-    aria-label="Yukarı çık"
-  >↑</button>
-
+  <button class="back-to-top" type="button" aria-label="Sayfanın başına dön">↑</button>
 </body>
 </html>
