@@ -16,6 +16,129 @@ python3 --version
 go version
 ```
 
+In PowerShell, check them with:
+
+```powershell
+py --version
+go version
+```
+
+## Windows (PowerShell)
+
+### 1. Install the requirements
+
+Install Python 3.8 or later and Go 1.27.2 or later using their Windows
+installers. During Python setup, enable the option to add Python to `PATH` (or
+install the Python launcher). Restart PowerShell after installation, then
+confirm both commands work:
+
+```powershell
+py --version
+go version
+```
+
+If `py` is not recognized but `python` is, use `python` instead of `py -3` in
+the commands below. If `go` is not recognized, reopen PowerShell or correct the
+Go installation's `PATH`.
+
+### 2. Open the repository folder
+
+In PowerShell, change to the directory containing `run.py`, `BUILD.md`, and the
+`backend` and `web` folders. For example, if you cloned the repository into
+your user folder:
+
+```powershell
+Set-Location "$HOME\kaplanlar"
+Get-ChildItem
+```
+
+The listing should include `run.py`, `backend`, and `web`. The helper resolves
+the repository location from its own file, so you can also invoke it by its
+full path from another working directory.
+
+### 3. Start the website
+
+Run the following in PowerShell. It asks for the admin password without
+displaying the characters, places it in the environment only for the server
+process, and removes it when the server exits:
+
+```powershell
+$securePassword = Read-Host "Admin password" -AsSecureString
+$passwordPointer = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($securePassword)
+try {
+    $env:ADMIN_PASSWORD = [Runtime.InteropServices.Marshal]::PtrToStringBSTR($passwordPointer)
+    py -3 .\run.py
+}
+finally {
+    [Runtime.InteropServices.Marshal]::ZeroFreeBSTR($passwordPointer)
+    $securePassword.Dispose()
+    Remove-Item Env:ADMIN_PASSWORD -ErrorAction SilentlyContinue
+}
+```
+
+The first start downloads the Go modules. Wait for the server to report its
+address, then visit <http://localhost:3000>. The dashboard is at
+<http://localhost:3000/admin>. Leave the PowerShell window open while using the
+site. Press **Ctrl+C** in that window to stop the server.
+
+This default mode is for local HTTP development and sets
+`ADMIN_COOKIE_SECURE=false`. To use the helper with HTTPS, change
+`py -3 .\run.py` to `py -3 .\run.py --secure-cookies`. The browser must connect
+over HTTPS for a Secure admin cookie to work.
+
+### 4. Run tests
+
+From the repository root:
+
+```powershell
+Push-Location .\backend
+try {
+    go test ./...
+    if ($LASTEXITCODE -ne 0) { throw "Go tests failed." }
+}
+finally {
+    Pop-Location
+}
+```
+
+### 5. Build and run the Windows executable
+
+Build from the repository root. Building does not require `ADMIN_PASSWORD`:
+
+```powershell
+py -3 .\run.py --build
+```
+
+This creates `bkm-kaplanlar.exe` in the repository root. Run the binary from
+`backend` so it can locate the sibling `web` folder. This example configures
+the cookie for local HTTP and uses the same hidden password prompt:
+
+```powershell
+$securePassword = Read-Host "Admin password" -AsSecureString
+$passwordPointer = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($securePassword)
+try {
+    $env:ADMIN_PASSWORD = [Runtime.InteropServices.Marshal]::PtrToStringBSTR($passwordPointer)
+    Push-Location .\backend
+    try {
+        $env:ADMIN_COOKIE_SECURE = "false"
+        ..\bkm-kaplanlar.exe
+    }
+    finally {
+        Remove-Item Env:ADMIN_COOKIE_SECURE -ErrorAction SilentlyContinue
+        Pop-Location
+    }
+}
+finally {
+    Remove-Item Env:ADMIN_PASSWORD -ErrorAction SilentlyContinue
+    [Runtime.InteropServices.Marshal]::ZeroFreeBSTR($passwordPointer)
+    $securePassword.Dispose()
+}
+```
+
+For production, do not set `ADMIN_COOKIE_SECURE=false`; the backend enables
+Secure cookies by default. Keep the actual admin password in a deployment
+secret store or environment configuration, never in the repository.
+
 ## Run locally
 
 From the repository root, set the admin password in your shell and launch the
@@ -54,13 +177,6 @@ python3 run.py --secure-cookies
 The HTTPS proxy must forward requests to the Go server. Use this option only
 when the browser connects over HTTPS; otherwise, the browser will not send the
 admin session cookie.
-
-In PowerShell, set the password without saving it in the repository:
-
-```powershell
-$env:ADMIN_PASSWORD = Read-Host "Admin password"
-python run.py
-```
 
 ## Run tests
 
